@@ -1,0 +1,126 @@
+
+<html>
+<head>
+ 
+
+  <title>Test Experment</title>
+</head>
+<body>
+<textarea name="test"></textarea><br/>  
+
+<input type="button" id="getData" name="getData" value="Get and Set Data" onclick="getData()" /> 
+<input type="text" name="items"/>
+
+
+
+<form>
+  <label>
+    Add some
+    <input name="hashtags" type="tags" pattern="^#" placeholder="#hashtags">
+  </label>
+</form>
+
+<input type="text" class="check" name="check" id="check"/>
+
+<select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+  <option value="AL">Please Slecct Item </option>
+    
+  <option value="WY">Wyoming</option>
+</select>
+ <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" />
+
+
+<input type="text" name="poop" class="Iinput"/>
+<script src="http://localhost/Admin/public/AdminAsset/js/jquery-2.1.1.min.js"></script>
+
+  <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>  
+<script>  
+    CKEDITOR.replace('test');  
+    
+  
+    function getData() {  
+        //Get data written in first Editor   
+        var editor_data = CKEDITOR.instances['test'].getData();  
+        //Set data in Second Editor which is written in first Editor  
+       
+    }  
+</script> 
+
+
+
+
+<script type="text/javascript">
+  $("input").tagsinput('items')
+</script>
+<script type="text/javascript">
+  var tagsInput = require('tags-input');
+
+// create a new tag input:
+var tags = document.createElement('input');
+tags.setAttribute('type', 'tags');
+tagsInput(tags);
+document.body.appendChild(tags);
+
+// enhance an existing input:
+tagsInput(document.querySelector('input[type="tags"]'));
+
+// or just enhance all tag inputs on the page:
+[].forEach.call(document.querySelectorAll('input[type="tags"]'), tagsInput);
+</script>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
+
+<script>
+  $('.js-example-basic-multiple').select2();
+
+$('.js-example-basic-hide-search-multi').on('select2:opening select2:closing', function( event ) {
+    var $searchfield = $(this).parent().find('.select2-search__field');
+    $searchfield.prop('disabled', true);
+});
+</script>
+<script type="text/javascript">
+  $(".poop").tagsinput('items')
+</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{asset('dist/bootstrap-tagsinput.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.css">
+    <link rel="stylesheet" href="{{asset('assets/app.css')}}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="./dist/bootstrap-tagsinput.min.js"></script>
+    <script src="./dist/bootstrap-tagsinput/bootstrap-tagsinput-angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/rainbow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/generic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/js/language/javascript.js"></script>
+
+
+<code data-language="javascript">
+<script>;
+$('.Iinput').tagsinput({
+  typeahead: {
+    source: function(query) {
+      return $.getJSON('citynames.json');
+    }
+  }
+});
+</script>
+</body>
+</html>
